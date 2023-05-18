@@ -1,0 +1,19 @@
+spring:
+ cloud:
+  gateway:
+   routes: 
+    - id: mutualfunds-details
+      uri: lb://mutualfunds-details
+      predicates: 
+       - Path=/mutualfunds/details/**
+       
+    - id: mutualfunds-wallet
+      uri: lb://mutualfunds-wallet
+      predicates:
+       - Path=/mutualfunds/wallet/**
+    - id: search-function-service
+      uri: lb://search-function-service
+      predicates:
+       - Path=/mutualfund/**
+  
+
