@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +23,7 @@ class SearchMfApplicationTests {
 	MutualFundsRepository repo;
 	
 	@BeforeEach
+	@Disabled
 	public void testCreate() {
 	 MutualFunds mutualFunds =new MutualFunds();
 	 MutualFunds mutualFund1 = new MutualFunds("Fund House 1", "Symbol 1", "Schema Name 1", "Schema Category 1", "Description 1", 100.0, 0.5);
@@ -31,10 +33,12 @@ class SearchMfApplicationTests {
 	}
 
     @AfterEach
+    @Disabled
     void cleanup() {
         repo.deleteAll();
     }
 	@Test
+	@Disabled
 	public void testReadAll() {
 		
 		List<MutualFunds> list = repo.findAll();

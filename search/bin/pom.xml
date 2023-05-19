@@ -11,7 +11,7 @@
 	<groupId>com.searchmf</groupId>
 	<artifactId>Search-mutualfunds-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>SearchMF</name>
 	<description>api to search mutualfunds details </description>
 	
