@@ -2,9 +2,11 @@ package com.mutualfunds.mf.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.List;
+import java.util.UUID;
 
 import com.mutualfunds.mf.entity.CustomerWalletEntity;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,63 +20,57 @@ public class UpdateCustomerWalletRepositoryTest {
     @Autowired
     private UpdateCustomerWalletRepository walletRepository;
 
+    private CustomerWalletEntity walletEntity;
 
- 
+    @BeforeEach
+    public void setUp() {
+        // Create a new CustomerWalletEntity with a unique customer ID for each test
+        int custId = Math.abs(UUID.randomUUID().hashCode());
+        walletEntity = new CustomerWalletEntity();
+        walletEntity.setCustomerId(custId);
+        walletEntity.setWalletBalance(100.0);
+        walletRepository.save(walletEntity);
+    }
+
+    @AfterEach
+    public void tearDown() {
+        walletRepository.deleteAll();
+    }
 
     @Test
     @Transactional
     public void testAddMoneyToWallet() {
-    	 CustomerWalletEntity walletEntity = new CustomerWalletEntity();
-         walletEntity.setCustomerId(1);
-         walletEntity.setWalletBalance(100.0);
-         walletRepository.save(walletEntity);
         // Arrange
         double amount = 50.0;
-        int custId = 1;
 
         // Act
-        walletRepository.addMoneyToWallet(amount, custId);
+        walletRepository.addMoneyToWallet(amount, walletEntity.getCustomerId());
 
         // Assert
-        double updatedBalance = walletRepository.getAccountBalance(custId);
+        double updatedBalance = walletRepository.getAccountBalance(walletEntity.getCustomerId());
         assertEquals(150.0, updatedBalance);
-        walletRepository.deleteAll(List.of(walletEntity));
     }
 
     @Test
     @Transactional
     public void testWithdrawMoneyFromWallet() {
-    	 CustomerWalletEntity walletEntity = new CustomerWalletEntity();
-         walletEntity.setCustomerId(1);
-         walletEntity.setWalletBalance(100.0);
-         walletRepository.save(walletEntity);
         // Arrange
         double amount = 30.0;
-        int custId = 1;
 
         // Act
-        walletRepository.withdrawMoneyFromWallet(amount, custId);
+        walletRepository.withdrawMoneyFromWallet(amount, walletEntity.getCustomerId());
 
         // Assert
-        double updatedBalance = walletRepository.getAccountBalance(custId);
+        double updatedBalance = walletRepository.getAccountBalance(walletEntity.getCustomerId());
         assertEquals(70.0, updatedBalance);
-        walletRepository.deleteAll(List.of(walletEntity));
     }
 
     @Test
     public void testGetAccountBalance() {
-    	 CustomerWalletEntity walletEntity = new CustomerWalletEntity();
-         walletEntity.setCustomerId(1);
-         walletEntity.setWalletBalance(100.0);
-         walletRepository.save(walletEntity);
-        // Arrange
-        int custId = 1;
-
         // Act
-        double balance = walletRepository.getAccountBalance(custId);
+        double balance = walletRepository.getAccountBalance(walletEntity.getCustomerId());
 
         // Assert
         assertEquals(100.0, balance);
-        walletRepository.deleteAll(List.of(walletEntity));
     }
 }
