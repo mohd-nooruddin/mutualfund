@@ -1,0 +1,77 @@
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (10.05, 0.5, 'Invest in growth companies', 'HDFC', 'Equity', 'HDFC Mid-Cap Opportunities Fund', 'HDFC-MCO');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (20.23, 0.7, 'Invest in blue-chip companies', 'ICICI', 'Equity', 'ICICI Prudential Bluechip Fund', 'ICICI-BLUE');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (30.15, 0.9, 'Invest in high dividend paying companies', 'SBI', 'Equity', 'SBI Magnum Equity ESG Fund', 'SBI-ESG');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (40.50, 0.3, 'Invest in government securities', 'Franklin', 'Debt', 'Franklin India Short Term Income Plan', 'Franklin-STIP');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (50.75, 0.4, 'Invest in corporate bonds', 'Kotak', 'Debt', 'Kotak Corporate Bond Fund', 'Kotak-CORP');
+
+
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (11.20, 0.3, 'Invest in technology companies', 'Tata', 'Equity', 'Tata Digital India Fund', 'Tata-DIG');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (22.15, 0.5, 'Invest in mid-sized companies', 'DSP', 'Equity', 'DSP Midcap Fund', 'DSP-MID');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (31.30, 0.7, 'Invest in large-cap companies', 'Aditya Birla', 'Equity', 'Aditya Birla Sun Life Frontline Equity Fund', 'Aditya-LARGE');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (44.80, 0.9, 'Invest in long term debt instruments', 'IDFC', 'Debt', 'IDFC Government Securities Fund - Investment Plan', 'IDFC-GOV');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES (56.60, 0.6, 'Invest in short-term money market instruments', 'UTI', 'Debt', 'UTI Liquid Cash Plan', 'UTI-LIQ');
+
+
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES 
+    (125.5, 0.2, 'Invest in Indian infrastructure', 'L&T', 'Equity', 'L&T Infrastructure Fund', 'LNT-INF'),
+    (75.2, 0.8, 'Invest in Indian equity markets', 'HDFC', 'Equity', 'HDFC Equity Fund', 'HDFC-EQ'),
+    (55.7, 0.4, 'Invest in companies based in emerging markets', 'Franklin Templeton', 'Equity', 'Franklin India Feeder - Franklin U.S. Opportunities Fund', 'FR-IN-US');
+
+
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (53.1, 0.5, 'Invest in Indian small-cap companies', 'SBI', 'Equity', 'SBI Small Cap Fund', 'SBI-SMALL');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (98.3, 0.6, 'Invest in Indian mid-cap companies', 'Kotak', 'Equity', 'Kotak Emerging Equity Scheme', 'KOTAK-EMG');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (22.8, 0.3, 'Invest in Indian debt markets', 'ICICI', 'Debt', 'ICICI Prudential Corporate Bond Fund', 'ICICI-CORP');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (45.6, 0.4, 'Invest in global equity markets', 'DSP', 'Equity', 'DSP Global Allocation Fund', 'DSP-GLOBAL');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (32.4, 0.1, 'Invest in Indian money market instruments', 'Aditya Birla Sun Life', 'Debt', 'Aditya Birla Sun Life Savings Fund', 'BIRLA-SAVE');
+
+
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (75.4, 0.7, 'Invest in Indian large-cap companies', 'Axis', 'Equity', 'Axis Bluechip Fund', 'AXIS-BLUE');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (12.6, 0.2, 'Invest in Indian short-term debt markets', 'Franklin Templeton', 'Debt', 'Franklin India Low Duration Fund', 'FRANKLIN-LOW');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (37.2, 0.3, 'Invest in Indian government securities', 'HDFC', 'Debt', 'HDFC Gilt Fund', 'HDFC-GILT');
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol)
+VALUES (62.8, 0.5, 'Invest in Indian large-cap companies', 'Reliance', 'Equity', 'Reliance Large Cap Fund', 'RELIANCE-LARGE');
+
+
+
+
+
+
+
+
+
+INSERT INTO mutual_funds (current_price, delta, description, fund_house, schema_category, schema_name, symbol) 
+VALUES 
+(78.35, -0.65, 'A diversified equity fund', 'SBI Mutual Fund', 'Equity', 'SBI Equity Fund', 'SBIEQUITY'),
+(125.20, 0.85, 'An open-ended growth scheme', 'HDFC Mutual Fund', 'Debt', 'HDFC Income Fund', 'HDFCINCOME'),
+(165.75, -1.10, 'A small-cap equity fund', 'Axis Mutual Fund', 'Equity', 'Axis Small Cap Fund', 'AXISSMALLCAP'),
+(320.40, 2.50, 'A large-cap equity fund', 'ICICI Prudential Mutual Fund', 'Equity', 'ICICI Pru Bluechip Fund', 'ICICIBLUECHIP'),
+(27.90, 0.20, 'A short-term debt fund', 'Kotak Mutual Fund', 'Debt', 'Kotak Short Term Fund', 'KOTAKSHORTTERM'),
+(99.65, 0.75, 'A mid-cap equity fund', 'Franklin Templeton Mutual Fund', 'Equity', 'Franklin India Prima Fund', 'FRANKLINPRIMA'),
+(45.30, -0.40, 'An open-ended debt scheme', 'Aditya Birla Sun Life Mutual Fund', 'Debt', 'Aditya Birla Sun Life Income Fund', 'ABSLLIFINCOME'),
+(289.15, -1.25, 'A multi-cap equity fund', 'DSP Mutual Fund', 'Equity', 'DSP Equity Fund', 'DSPEQUITY'),
+(14.85, 0.10, 'A liquid debt fund', 'UTI Mutual Fund', 'Debt', 'UTI Liquid Fund', 'UTILIQUID'),
+(210.90, 1.50, 'A value-oriented equity fund', 'Sundaram Mutual Fund', 'Equity', 'Sundaram Value Fund', 'SUNDARAMVALUE'),
+(56.75, 0.45, 'An open-ended income scheme', 'IDFC Mutual Fund', 'Debt', 'IDFC Income Fund', 'IDFCINCOME'),
+(105.40, 0.85, 'A large-cap equity fund', 'Mirae Asset Mutual Fund', 'Equity', 'Mirae Asset Large Cap Fund', 'MIRAEASSETLARGE'),
+(225.50, -1.80, 'A thematic equity fund', 'Motilal Oswal Mutual Fund', 'Equity', 'Motilal Oswal Focused 25 Fund', 'MOTILALFOCUSED'),
+(31.70, -0.25, 'A money market debt fund', 'Tata Mutual Fund', 'Debt', 'Tata Money Market Fund', 'TATAMONEY'),
+(60.20, 0.50, 'A balanced hybrid fund', 'L&T Mutual Fund', 'Hybrid', 'L&T Hybrid Equity Fund', 'L&THYBRID');
