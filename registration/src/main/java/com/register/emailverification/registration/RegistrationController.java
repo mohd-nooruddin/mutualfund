@@ -18,6 +18,7 @@ import java.io.UnsupportedEncodingException;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 @RequestMapping("/register")
 public class RegistrationController {
 
