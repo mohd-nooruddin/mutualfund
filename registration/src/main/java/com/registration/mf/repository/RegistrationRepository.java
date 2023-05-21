@@ -12,11 +12,11 @@ import com.registration.mf.entity.RegistrationEntity;
 public interface RegistrationRepository extends JpaRepository<RegistrationEntity, String> {
 
 	@Modifying
-    @Query(value = "INSERT INTO user (username, first_name, last_name, password) VALUES (?, ?, ?, ?)",
+    @Query(value = "INSERT INTO user1 (username, first_name, last_name, password) VALUES (?, ?, ?, ?)",
             nativeQuery = true)
     void insertUser(@Param("username") String username, @Param("firstName") String firstName,
                     @Param("lastName") String lastName, @Param("password") String password);
     
-    @Query(value = "SELECT COUNT(*) FROM user WHERE username = ?", nativeQuery = true)
+    @Query(value = "SELECT COUNT(*) FROM user1 WHERE username = ?", nativeQuery = true)
     int isUserExists(@Param("username") String username);
 }
