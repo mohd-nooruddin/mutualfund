@@ -44,7 +44,7 @@ public class RegistrationController {
         return ResponseEntity.ok("User registered successfully");
     }
     
-    @GetMapping("isUserExists")
+    @GetMapping("/isUserExists")
     public ResponseEntity<Integer> isUserExists(@RequestParam String username) {
     	return ResponseEntity.ok(registrationService.isUserExists(username));
     }
