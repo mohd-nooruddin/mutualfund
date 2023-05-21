@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.registration.mf.service.RegistrationService;
 
@@ -41,5 +42,10 @@ public class RegistrationController {
         registrationService.insertUser(username, firstName, lastName, password, email);
 
         return ResponseEntity.ok("User registered successfully");
+    }
+    
+    @GetMapping("isUserExists")
+    public ResponseEntity<Integer> isUserExists(@RequestParam String username) {
+    	return ResponseEntity.ok(registrationService.isUserExists(username));
     }
 }
