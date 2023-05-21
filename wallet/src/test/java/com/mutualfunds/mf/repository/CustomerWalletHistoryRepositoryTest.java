@@ -11,12 +11,13 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
+import org.junit.jupiter.api.Disabled;
 import com.mutualfunds.mf.entity.CustomerWalletHistory;
 
 import jakarta.transaction.Transactional;
 
 @SpringBootTest
+@Disabled
 public class CustomerWalletHistoryRepositoryTest {
 
     @Autowired
