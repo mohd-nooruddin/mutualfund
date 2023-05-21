@@ -11,7 +11,7 @@
 	<groupId>com.registration</groupId>
 	<artifactId>registration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>registration</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
