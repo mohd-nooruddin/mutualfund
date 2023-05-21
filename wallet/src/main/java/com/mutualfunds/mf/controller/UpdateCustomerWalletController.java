@@ -21,6 +21,7 @@ public class UpdateCustomerWalletController {
 
 	@PatchMapping(value = "/addMoney")
 	@ResponseBody
+	@CrossOrigin
 	public ResponseEntity<String> addMoneyToWallet(@RequestParam("customerId") int customerId,
 			@RequestParam("amount") double amount) {
 		return ResponseEntity.ok(updateCustomerWalletService.addMoneyToWallet(customerId, amount));
@@ -28,6 +29,7 @@ public class UpdateCustomerWalletController {
 
 	@PatchMapping(value = "/withdrawMoney")
 	@ResponseBody
+	@CrossOrigin
 	public ResponseEntity<String> withdrawMoneyFromWallet(
 			@RequestParam("customerId") int customerId, @RequestParam("amount") double amount) {
 		if (updateCustomerWalletService.getAccountBalance(customerId) >= amount) {
