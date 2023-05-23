@@ -8,6 +8,7 @@ public class MutualFundTransactionsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MutualFundTransactionsApplication.class, args);
+		
 	}
 
 }
