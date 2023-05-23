@@ -22,7 +22,7 @@ public class UpdateCustomerWalletController {
 	@PatchMapping(value = "/addMoney")
 	@ResponseBody
 	@CrossOrigin
-	public ResponseEntity<String> addMoneyToWallet(@RequestParam("customerId") long customerId,
+	public ResponseEntity<String> addMoneyToWallet(@RequestParam("customerId") int customerId,
 			@RequestParam("amount") double amount) {
 		return ResponseEntity.ok(updateCustomerWalletService.addMoneyToWallet(customerId, amount));
 	}
@@ -31,7 +31,7 @@ public class UpdateCustomerWalletController {
 	@ResponseBody
 	@CrossOrigin
 	public ResponseEntity<String> withdrawMoneyFromWallet(
-			@RequestParam("customerId") long customerId, @RequestParam("amount") double amount) {
+			@RequestParam("customerId") int customerId, @RequestParam("amount") double amount) {
 		if (updateCustomerWalletService.getAccountBalance(customerId) >= amount) {
 			return ResponseEntity.ok(updateCustomerWalletService.withdrawMoneyFromWallet(customerId, amount));
 		}
@@ -43,7 +43,7 @@ public class UpdateCustomerWalletController {
 	
 	@GetMapping(value = "/getAccountBalance")
 	@CrossOrigin
-	public ResponseEntity<Double> getHistory(@RequestParam("customerId") long customerId){
+	public ResponseEntity<Double> getHistory(@RequestParam("customerId") int customerId){
 		return ResponseEntity.ok(updateCustomerWalletService.getAccountBalance(customerId));
 	}
 }

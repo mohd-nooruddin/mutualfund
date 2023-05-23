@@ -15,12 +15,12 @@ public class CustomerWalletHistoryService {
 	@Autowired
 	CustomerWalletHistoryRepository customerWalletHistoryRepository;
 	
-	public List<CustomerWalletHistory> getHistories(long customerId) {
+	public List<CustomerWalletHistory> getHistories(int customerId) {
 		return customerWalletHistoryRepository.getHistories(customerId);
 	}
 	
 	@Transactional
-	public String updateTransactionHistory(long customerId, long transactionTypeId, double walletAmount, long walletId) {
+	public String updateTransactionHistory(int customerId, int transactionTypeId, double walletAmount, int walletId) {
 		customerWalletHistoryRepository.updateTransactionHistory(customerId, transactionTypeId, walletAmount, walletId);
 		return "Update successful";
 	}

@@ -13,18 +13,18 @@ public class UpdateCustomerWalletService {
 	UpdateCustomerWalletRepository updateCustomerWalletRepository;
 
 	@Transactional
-	public String addMoneyToWallet(long customerId, double amount) {
+	public String addMoneyToWallet(int customerId, double amount) {
 		updateCustomerWalletRepository.addMoneyToWallet(amount, customerId);
 		return "Amount added successfully";
 	}
 
 	@Transactional
-	public String withdrawMoneyFromWallet(long customerId, double amount) {
+	public String withdrawMoneyFromWallet(int customerId, double amount) {
 		updateCustomerWalletRepository.withdrawMoneyFromWallet(amount, customerId);
 		return "Amount withdrawn successfully";
 	}
 
-	public double getAccountBalance(long customerId) {
+	public double getAccountBalance(int customerId) {
 		return updateCustomerWalletRepository.getAccountBalance(customerId);
 	}
 }

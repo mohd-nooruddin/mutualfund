@@ -16,7 +16,8 @@ public class CustomerWalletEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long walletId;
 	private long customerId;
-	private double walletBalance;
+	private double walletBalance = 0;
+	@Nullable
 	private Date TransationDate;
 
 	public int getWalletId() {

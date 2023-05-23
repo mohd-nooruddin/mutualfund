@@ -26,13 +26,13 @@ public class CustomerWalletHistoryController {
 	
 //	http://localhost:8090/mutualfunds/details/top?limit=5
 	@GetMapping(value = "/history", produces = {MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<List<CustomerWalletHistory>> getHistory(@RequestParam("customerId") long customerId){
+	public ResponseEntity<List<CustomerWalletHistory>> getHistory(@RequestParam("customerId") int customerId){
 		return ResponseEntity.ok(customerWalletHistoryService.getHistories(customerId));
 	}
 	
 	@PatchMapping(value = "/updateTransactionHistory")
 	@ResponseBody
-	public ResponseEntity<String> updateTransactionHistory( @RequestParam("customerId") long customerId, @RequestParam("transactionTypeId") long transactionTypeId, @RequestParam("walletAmount") double walletAmount, @RequestParam("walletId") long walletId) {
+	public ResponseEntity<String> updateTransactionHistory( @RequestParam("customerId") int customerId, @RequestParam("transactionTypeId") int transactionTypeId, @RequestParam("walletAmount") double walletAmount, @RequestParam("walletId") int walletId) {
 		return ResponseEntity.ok(customerWalletHistoryService.updateTransactionHistory( customerId, transactionTypeId, walletAmount, walletId));
 	}
 	
