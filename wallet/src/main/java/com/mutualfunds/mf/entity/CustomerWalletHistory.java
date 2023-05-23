@@ -13,11 +13,11 @@ import jakarta.persistence.Table;
 public class CustomerWalletHistory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private int walletId;
-	private int customerId;
+	private long id;
+	private long walletId;
+	private long customerId;
 	private Double walletAmount;
-	private int transactionTypeId;
+	private long transactionTypeId;
 	private Date transactionDate;
 
 	public int getId() {

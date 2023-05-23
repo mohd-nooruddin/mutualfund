@@ -10,13 +10,13 @@ import org.springframework.stereotype.Repository;
 import com.mutualfunds.mf.entity.CustomerWalletHistory;
 
 @Repository
-public interface CustomerWalletHistoryRepository extends JpaRepository<CustomerWalletHistory, Integer> {
+public interface CustomerWalletHistoryRepository extends JpaRepository<CustomerWalletHistory, Long> {
 	
 	@Query(value = "SELECT * FROM customer_wallet_history WHERE CUSTOMER_ID=?", nativeQuery = true)
-	public List<CustomerWalletHistory> getHistories(int customerId);
+	public List<CustomerWalletHistory> getHistories(long customerId);
 	
 	@Modifying
 	@Query(value = "INSERT INTO customer_wallet_history (CUSTOMER_ID, TRANSACTION_DATE, TRANSACTION_TYPE_ID, WALLET_AMOUNT, WALLET_ID) VALUES(?, CURRENT_TIMESTAMP, ?, ?, ?)", nativeQuery = true)
-	public void updateTransactionHistory(int customerId, int transactionTypeId, double walletAmount, int walletId);
+	public void updateTransactionHistory(long customerId, long transactionTypeId, double walletAmount, long walletId);
 	
 }

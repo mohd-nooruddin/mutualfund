@@ -8,15 +8,15 @@ import org.springframework.stereotype.Repository;
 import com.mutualfunds.mf.entity.CustomerWalletEntity;
 
 @Repository
-public interface UpdateCustomerWalletRepository extends JpaRepository<CustomerWalletEntity, Integer> {
+public interface UpdateCustomerWalletRepository extends JpaRepository<CustomerWalletEntity, Long> {
 	@Modifying
 	@Query(value = "UPDATE customer_wallet SET WALLET_BALANCE=(WALLET_BALANCE + ?) WHERE CUSTOMER_ID=?", nativeQuery = true)
-	public void addMoneyToWallet(double amount, int custId);
+	public void addMoneyToWallet(double amount, long custId);
 
 	@Modifying
 	@Query(value = "UPDATE customer_wallet SET WALLET_BALANCE=(WALLET_BALANCE - ?) WHERE CUSTOMER_ID=?", nativeQuery = true)
-	public void withdrawMoneyFromWallet(double amount, int custId);
+	public void withdrawMoneyFromWallet(double amount, long custId);
 
 	@Query(value = "SELECT WALLET_BALANCE FROM customer_wallet WHERE CUSTOMER_ID=?", nativeQuery = true)
-	public double getAccountBalance(int customerId);
+	public double getAccountBalance(long customerId);
 }
