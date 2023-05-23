@@ -15,10 +15,4 @@ spring:
       uri: lb://search-function-service
       predicates:
        - Path=/mutualfund/**
-       
-   - id: registration
-     uri: lb://registration
-     predicates:
-      - Path=/customer/**
-       
 
