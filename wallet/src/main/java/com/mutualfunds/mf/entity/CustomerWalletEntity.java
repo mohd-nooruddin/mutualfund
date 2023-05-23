@@ -14,8 +14,8 @@ import jakarta.persistence.Table;
 public class CustomerWalletEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long walletId;
-	private long customerId;
+	private int walletId;
+	private int customerId;
 	private double walletBalance = 0;
 	@Nullable
 	private Date TransationDate;
