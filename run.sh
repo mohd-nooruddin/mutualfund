@@ -6,7 +6,7 @@ build_and_run_microservice() {
     echo "Building $1..."
     mvn clean install
     echo "Running $1..."
-    nohop java -jar target/*.jar &
+    nohup java -jar target/*.jar &
     cd -
 }
 
