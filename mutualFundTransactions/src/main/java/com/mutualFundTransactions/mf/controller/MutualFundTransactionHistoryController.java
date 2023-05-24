@@ -3,13 +3,12 @@ package com.mutualFundTransactions.mf.controller;
 import com.mutualFundTransactions.mf.entity.MutualFundTransactionHistoryEntity;
 import com.mutualFundTransactions.mf.service.MutualFundTransactionHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("transactionhistory")
+@RestController
+@RequestMapping("/transactionhistory")
 @CrossOrigin
 public class MutualFundTransactionHistoryController {
 
