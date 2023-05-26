@@ -33,9 +33,6 @@ public class MutualFundTransactionEntity {
 		// Default constructor
 	}
 
-	// Other constructors
-
-	// Getters and setters
 
 	public MutualFundTransactionEntity(Long id, Long userId, Long mutualFundsId, String type, Double price,
 			Integer unit, Double investedWallet) {
