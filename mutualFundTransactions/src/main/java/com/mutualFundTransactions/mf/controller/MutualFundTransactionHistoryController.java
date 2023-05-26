@@ -24,12 +24,13 @@ public class MutualFundTransactionHistoryController {
 	}
 
 	@PostMapping("/insert")
-	public void insertTransaction(@RequestParam("username") String username,
+	public String insertTransaction(@RequestParam("username") String username,
 			@RequestParam("mutualFundsId") Long mutualFundsId, @RequestParam("type") String type,
 			@RequestParam("price") Double price, @RequestParam("unit") Integer unit) {
 		long id = transactionService.getUserId(username);
 		System.out.println(id);
 		transactionHistoryService.insertTransaction(id, mutualFundsId, type, price, unit);
+		return "Data inserted Successfully";
 	}
 
 	@GetMapping("/user/{userId}")
