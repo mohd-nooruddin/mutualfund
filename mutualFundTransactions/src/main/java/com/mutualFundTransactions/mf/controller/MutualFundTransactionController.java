@@ -25,9 +25,10 @@ public class MutualFundTransactionController {
 	}
 
 	@PostMapping("/updateportfolio")
-	public void addMutualFundTransaction(@RequestParam("username") String username,
+	public String addMutualFundTransaction(@RequestParam("username") String username,
 			@RequestParam("mutualFundsId") Long mutualFundsId, @RequestParam("price") Double price,
 			@RequestParam("unit") Integer unit) {
 		transactionService.updateportfolio(transactionService.getUserId(username), mutualFundsId, price, unit);
+		return "Portfolio Updated Successfully";
 	}
 }
