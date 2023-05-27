@@ -41,9 +41,8 @@ public class UserController {
 	}
 	
 	@GetMapping("/send")
-	public String sendEmail(@RequestParam("mail") String to) {
-		userService.sendMail(to);
-		return "Email Sent Successfully to ( "+to+" )";
+	public String sendEmail(@RequestParam("email") String to) {
+		return userService.sendMail(to);
 	}
 	
 	@PostMapping("/register")
@@ -56,3 +55,4 @@ public class UserController {
 		return userService.OtpVerification(otp, email);
 	}
 }
+

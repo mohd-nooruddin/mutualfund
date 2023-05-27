@@ -70,7 +70,7 @@ public class UserService {
 			 mailMessage.setTo(to);
 			 mailMessage.setSubject(subject);
 			 mailMessage.setText(body);
-			 mailMessage.setFrom("fundfusion.mf@gmail.com");
+			 mailMessage.setFrom("FundFusion <fundfusion.mf@gmail.com>");
 			 
 			 mailSender.send(mailMessage);
 			System.out.println("Email Sent SuccessFully");
