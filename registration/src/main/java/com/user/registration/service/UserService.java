@@ -129,7 +129,7 @@ public class UserService {
 				+ ""+emailsentStatus;
 	}
 	
-	@Transactional
+//	@Transactional
 	public String OtpVerification(Long otp, String email) {
 		UserOtp userOtp =null ;		
 		Optional<User> userOptional = null;
@@ -163,12 +163,14 @@ public class UserService {
 				userRepository.save(user);
 				
 				UserWalletEntity userWalletEntity = new UserWalletEntity();
-				userWalletEntity.setUserId(userOptional.get().getId());
+//				userWalletEntity.setUserId(userOptional.get().getId());
+//				int user_id = Math.toIntExact( userOptional.get().getId());
+				userWalletEntity.setUserId(Math.toIntExact( userOptional.get().getId()));
 				userWalletEntity.setWalletBalance(0.00);
 				Timestamp curTimestamp = new Timestamp(System.currentTimeMillis());
 				userWalletEntity.setTransationDate(curTimestamp);
 				
-				errorMessage= "Error While Instantion of User Account";
+				errorMessage= "Error While Initiating User Account";
 //				Initiating User wallet with 0 	Balance 
 				userWalletRepository.save(userWalletEntity);
 				

@@ -15,24 +15,24 @@ public class UserWalletEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long walletId;
-	private Long userId;
-	private Double walletBalance;
+//	private Long userId;
+	private int customerId;
+	private double walletBalance;
 	@Nullable
 	private Date TransationDate;
 	public UserWalletEntity() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public UserWalletEntity(Long walletId, Long userId, Double walletBalance, Date transationDate) {
+	public UserWalletEntity(Long walletId, int userId, Double walletBalance, Date transationDate) {
 		super();
 		this.walletId = walletId;
-		this.userId = userId;
+		this.customerId = userId;
 		this.walletBalance = walletBalance;
 		TransationDate = transationDate;
 	}
-	public UserWalletEntity(Long userId, Double walletBalance, Date transationDate) {
+	public UserWalletEntity(int userId, Double walletBalance, Date transationDate) {
 		super();
-		this.userId = userId;
+		this.customerId = userId;
 		this.walletBalance = walletBalance;
 		TransationDate = transationDate;
 	}
@@ -42,11 +42,11 @@ public class UserWalletEntity {
 	public void setWalletId(Long walletId) {
 		this.walletId = walletId;
 	}
-	public Long getUserId() {
-		return userId;
+	public int getUserId() {
+		return customerId;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserId(int userId) {
+		this.customerId = userId;
 	}
 	public Double getWalletBalance() {
 		return walletBalance;
@@ -62,7 +62,7 @@ public class UserWalletEntity {
 	}
 	@Override
 	public String toString() {
-		return "UserWalletEntity [walletId=" + walletId + ", userId=" + userId + ", walletBalance="
+		return "UserWalletEntity [walletId=" + walletId + ", userId=" + customerId + ", walletBalance="
 				+ walletBalance + ", TransationDate=" + TransationDate + "]";
 	}
 	
