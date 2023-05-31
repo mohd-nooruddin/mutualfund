@@ -42,8 +42,8 @@ public class MutualFundTransactionHistoryController {
 	}
 	
 	@GetMapping("/userid/{username}")
-	public Long getTransactionsByUser(@PathVariable String userId) {
-		return transactionService.getUserId(userId);
+	public Long getTransactionsByUser(@PathVariable String username) {
+		return transactionService.getUserId(username);
 	}
 
 	@GetMapping("/type/{type}")
