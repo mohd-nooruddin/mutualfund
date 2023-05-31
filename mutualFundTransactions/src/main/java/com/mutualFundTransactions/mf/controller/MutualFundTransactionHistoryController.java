@@ -29,9 +29,6 @@ public class MutualFundTransactionHistoryController {
 			@RequestParam("price") Double price, @RequestParam("unit") Integer unit) {
 		long id = transactionService.getUserId(username);
 		System.out.println(id);
-		if (type.equals("sell")) {
-			unit = -(unit);
-		}
 		transactionHistoryService.insertTransaction(id, mutualFundsId, type, price, unit);
 		transactionService.updateportfolio(transactionService.getUserId(username), mutualFundsId, price, unit);
 		
