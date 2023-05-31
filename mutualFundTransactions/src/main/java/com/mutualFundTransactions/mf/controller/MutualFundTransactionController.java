@@ -28,9 +28,6 @@ public class MutualFundTransactionController {
 	public String addMutualFundTransaction(@RequestParam("username") String username,
 			@RequestParam("mutualFundsId") Long mutualFundsId, @RequestParam("price") Double price,
 			@RequestParam("unit") Integer unit) {
-		if (type.equals("sell")) {
-			unit = -(unit);
-		}
 		transactionService.updateportfolio(transactionService.getUserId(username), mutualFundsId, price, unit);
 		return "Portfolio Updated Successfully";
 	}
