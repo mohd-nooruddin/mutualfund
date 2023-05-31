@@ -30,8 +30,9 @@ public class MutualFundTransactionHistoryController {
 		long id = transactionService.getUserId(username);
 		System.out.println(id);
 		transactionHistoryService.insertTransaction(id, mutualFundsId, type, price, unit);
-		transactionService.updateportfolio(transactionService.getUserId(username), mutualFundsId, price, unit);
-		
+		if (type.equals("sell")) {
+			transactionService.updateportfolio(transactionService.getUserId(username), mutualFundsId, price, -(unit));
+		}
 		return "Data inserted Successfully";
 	}
 
@@ -40,7 +41,7 @@ public class MutualFundTransactionHistoryController {
 		return transactionHistoryService.getTransactionsByUserId(userId);
 	}
 	
-	@GetMapping("/userid/{userId}")
+	@GetMapping("/userid/{username}")
 	public Long getTransactionsByUser(@PathVariable String userId) {
 		return transactionService.getUserId(userId);
 	}
