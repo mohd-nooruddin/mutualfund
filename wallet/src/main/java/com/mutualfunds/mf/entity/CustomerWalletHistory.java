@@ -14,7 +14,6 @@ public class CustomerWalletHistory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private int walletId;
 	private int customerId;
 	private Double walletAmount;
 	private int transactionTypeId;
@@ -26,14 +25,6 @@ public class CustomerWalletHistory {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public int getWalletId() {
-		return walletId;
-	}
-
-	public void setWalletId(int walletId) {
-		this.walletId = walletId;
 	}
 
 	public int getCustomerId() {
