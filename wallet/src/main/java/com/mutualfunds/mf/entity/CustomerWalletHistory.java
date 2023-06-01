@@ -59,11 +59,10 @@ public class CustomerWalletHistory {
 		this.transactionDate = transactionDate;
 	}
 
-	public CustomerWalletHistory(int id, int walletId, int customerId, Double walletAmount, int transactionTypeId,
+	public CustomerWalletHistory(int id, int customerId, Double walletAmount, int transactionTypeId,
 			Date transactionDate) {
 		super();
 		this.id = id;
-		this.walletId = walletId;
 		this.customerId = customerId;
 		this.walletAmount = walletAmount;
 		this.transactionTypeId = transactionTypeId;
@@ -77,7 +76,7 @@ public class CustomerWalletHistory {
 
 	@Override
 	public String toString() {
-		return "CustomerWalletHistory [id=" + id + ", walletId=" + walletId + ", customerId=" + customerId
+		return "CustomerWalletHistory [id=" + id + ", customerId=" + customerId
 				+ ", walletAmount=" + walletAmount + ", transactionTypeId=" + transactionTypeId + ", transactionDate="
 				+ transactionDate + "]";
 	}
