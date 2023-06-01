@@ -32,8 +32,8 @@ public class CustomerWalletHistoryController {
 	
 	@PatchMapping(value = "/updateTransactionHistory")
 	@ResponseBody
-	public ResponseEntity<String> updateTransactionHistory( @RequestParam("customerId") int customerId, @RequestParam("transactionTypeId") int transactionTypeId, @RequestParam("walletAmount") double walletAmount, @RequestParam("walletId") int walletId) {
-		return ResponseEntity.ok(customerWalletHistoryService.updateTransactionHistory( customerId, transactionTypeId, walletAmount, walletId));
+	public ResponseEntity<String> updateTransactionHistory( @RequestParam("customerId") int customerId, @RequestParam("transactionTypeId") int transactionTypeId, @RequestParam("walletAmount") double walletAmount) {
+		return ResponseEntity.ok(customerWalletHistoryService.updateTransactionHistory( customerId, transactionTypeId, walletAmount));
 	}
 	
 }
