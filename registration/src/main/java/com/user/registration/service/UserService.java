@@ -71,6 +71,7 @@ public class UserService {
 			 mailMessage.setSubject(subject);
 			 mailMessage.setText(body);
 			 mailMessage.setFrom("FundFusion <fundfusion.mf@gmail.com>");
+//			 mailMessage.setFrom("FundFusion No-Reply <mfu.project321@gmail.com>");
 			 
 			 mailSender.send(mailMessage);
 			System.out.println("Email Sent SuccessFully");
@@ -183,6 +184,8 @@ public class UserService {
 			e.printStackTrace();
 			return errorMessage;
 		}
+		
+		
 	}
 	
 }

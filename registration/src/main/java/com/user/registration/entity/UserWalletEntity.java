@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class UserWalletEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long walletId;
+	private int walletId;
 //	private Long userId;
 	private int customerId;
 	private double walletBalance;
@@ -23,7 +23,7 @@ public class UserWalletEntity {
 	public UserWalletEntity() {
 		super();
 	}
-	public UserWalletEntity(Long walletId, int userId, Double walletBalance, Date transationDate) {
+	public UserWalletEntity(int walletId, int userId, Double walletBalance, Date transationDate) {
 		super();
 		this.walletId = walletId;
 		this.customerId = userId;
@@ -36,10 +36,10 @@ public class UserWalletEntity {
 		this.walletBalance = walletBalance;
 		TransationDate = transationDate;
 	}
-	public Long getWalletId() {
+	public int getWalletId() {
 		return walletId;
 	}
-	public void setWalletId(Long walletId) {
+	public void setWalletId(int walletId) {
 		this.walletId = walletId;
 	}
 	public int getUserId() {
