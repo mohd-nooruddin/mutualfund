@@ -20,8 +20,8 @@ public class CustomerWalletHistoryService {
 	}
 	
 	@Transactional
-	public String updateTransactionHistory(int customerId, int transactionTypeId, double walletAmount, int walletId) {
-		customerWalletHistoryRepository.updateTransactionHistory(customerId, transactionTypeId, walletAmount, walletId);
+	public String updateTransactionHistory(int customerId, int transactionTypeId, double walletAmount) {
+		customerWalletHistoryRepository.updateTransactionHistory(customerId, transactionTypeId, walletAmount);
 		return "Update successful";
 	}
 }
