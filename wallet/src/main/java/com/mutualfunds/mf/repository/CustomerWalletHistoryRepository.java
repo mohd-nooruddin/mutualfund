@@ -16,7 +16,7 @@ public interface CustomerWalletHistoryRepository extends JpaRepository<CustomerW
 	public List<CustomerWalletHistory> getHistories(int customerId);
 	
 	@Modifying
-	@Query(value = "INSERT INTO customer_wallet_history (CUSTOMER_ID, TRANSACTION_DATE, TRANSACTION_TYPE_ID, WALLET_AMOUNT, WALLET_ID) VALUES(?, CURRENT_TIMESTAMP, ?, ?, ?)", nativeQuery = true)
+	@Query(value = "INSERT INTO customer_wallet_history (CUSTOMER_ID, TRANSACTION_DATE, TRANSACTION_TYPE_ID, WALLET_AMOUNT) VALUES(?, CURRENT_TIMESTAMP, ?, ?)", nativeQuery = true)
 	public void updateTransactionHistory(int customerId, int transactionTypeId, double walletAmount, int walletId);
 	
 }
