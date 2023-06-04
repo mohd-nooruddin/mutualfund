@@ -1,6 +1,7 @@
 package com.user.registration.service;
 
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -16,7 +17,6 @@ import com.user.registration.repository.UserOtpRepository;
 import com.user.registration.repository.UserRepository;
 import com.user.registration.repository.UserWalletRepository;
 
-import jakarta.transaction.Transactional;
 
 @Service
 public class UserService {
@@ -177,7 +177,7 @@ public class UserService {
 				
 				return "OTP Verified Successfully!!!....";
 			}else {
-				return "Enter Correct OTP";
+				return "Enter Correct OTP or Resend the OTP";
 			}
 			
 		} catch (Exception e) {
@@ -187,5 +187,55 @@ public class UserService {
 		
 		
 	}
+	
+	public String UpdatePassword(Long otp, String email,String password) {
+		UserOtp userOtp =null ;		
+		Optional<User> userOptional = null;
+		String errorMessage = "";
+		try {
+			errorMessage = "Something Went wrong while Validating User with Email..";
+			userOptional = findByEmail(email);
+			if (userOptional.isEmpty()) {
+				return "User is Not Registered with email : "+email+" ' \r\n"
+						+ "Kindly register first";
+			}
+			errorMessage = "OTP not Found. \r\n"
+					+ "First Initiate OTP ";
+			System.out.println("User OTP from User Optional is : "+userOptional.get().getId());
+			userOtp = userOtpRepository.findUserOtpByUserId(userOptional.get().getId());
+			if (userOtp == null) {
+				return errorMessage;
+			}
+			System.out.println("UserOTP Class's ID : "+userOtp.getId());
+			if (userOtp.getOTP().equals(otp)) {
+				User user = new User();
+				user.setId(userOptional.get().getId());
+				user.setFirstName(userOptional.get().getFirstName());
+				user.setLastName(userOptional.get().getLastName());
+				user.setUsername(userOptional.get().getUsername());
+				user.setPassword(password);
+				user.setRole(userOptional.get().getRole());
+				user.setEnabled(true);				
+				
+				errorMessage="Error While Verifying and Updating Password Data";
+				userRepository.save(user);
+				
+				errorMessage="Error While managing otp";
+				List<UserOtp> userOtps = userOtpRepository.findAllUserOtpByUserId(userOptional.get().getId());
+				errorMessage="Error While managing otp's";
+				userOtpRepository.deleteAll(userOtps);
+				return "Password Updated Successfully!!!....";
+			}else {
+				return "Enter Correct OTP or Resend the OTP";
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return errorMessage;
+		}
+		
+		
+	}	
 	
 }

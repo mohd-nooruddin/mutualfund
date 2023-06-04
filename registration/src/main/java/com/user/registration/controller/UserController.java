@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -53,6 +54,17 @@ public class UserController {
 	@PutMapping("/verification")
 	public String otpVerification(@RequestParam("email") String email, @RequestParam("otp") Long otp) {
 		return userService.OtpVerification(otp, email);
+	}
+	
+	@PatchMapping("/update/password")
+	public String updatePassword(@RequestParam("otp") Long otp,@RequestBody User user) {
+		return userService.UpdatePassword(otp, user.getUsername(),user.getPassword());
+	}
+	
+	@GetMapping("/findname")
+	public String findFullName(@RequestParam("email") String email){
+		Optional<User> usOptional = userService.findByEmail(email);
+		return usOptional.get().getFirstName()+" "+ usOptional.get().getLastName();
 	}
 }
 
