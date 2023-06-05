@@ -32,7 +32,7 @@ public class MutualFundTransactionService {
 			return "Data inserted successfully";
 		}
 		else {
-			if (check(mutualFundsId, userId) + unit < 0) {
+			if (check(mutualFundsId, userId) + unit < 0 || check(mutualFundsId, userId) == 0) {
 				return "Not enough units";
 			}
 			transactionRepository.updateMutualFundTransaction(unit, userId, mutualFundsId);
