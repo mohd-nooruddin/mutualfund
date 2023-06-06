@@ -18,14 +18,15 @@ public class WishlistController {
     }
 
     @PostMapping("/add")
-    public void addWishlistItem(@RequestParam("customerId") Long customerId, @RequestParam("mutualfundId") Long mutualfundId) {
+    public String addWishlistItem(@RequestParam("customerId") Long customerId, @RequestParam("mutualfundId") Long mutualfundId) {
         wishlistService.insertWishlistItem(customerId, mutualfundId);
+        return "Data added successfully";
     }
 
     @PostMapping("/remove")
-    public void removeWishlistItem(@RequestParam("customerId") Long customerId, @RequestParam("mutualfundId") Long mutualfundId) {
+    public String removeWishlistItem(@RequestParam("customerId") Long customerId, @RequestParam("mutualfundId") Long mutualfundId) {
         wishlistService.removeWishlistItem(customerId, mutualfundId);
-    }
+        return "Data removed successfully";
 
     @GetMapping("/{customerId}")
     public List<WishlistEntity> getWishlistItemsByCustomerId(@PathVariable("customerId") Long customerId) {
