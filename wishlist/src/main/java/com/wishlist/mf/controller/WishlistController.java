@@ -27,6 +27,7 @@ public class WishlistController {
     public String removeWishlistItem(@RequestParam("customerId") Long customerId, @RequestParam("mutualfundId") Long mutualfundId) {
         wishlistService.removeWishlistItem(customerId, mutualfundId);
         return "Data removed successfully";
+    }
 
     @GetMapping("/{customerId}")
     public List<WishlistEntity> getWishlistItemsByCustomerId(@PathVariable("customerId") Long customerId) {
