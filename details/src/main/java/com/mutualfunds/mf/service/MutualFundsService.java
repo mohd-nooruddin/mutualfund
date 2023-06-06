@@ -3,6 +3,7 @@ package com.mutualfunds.mf.service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -81,5 +82,12 @@ public class MutualFundsService {
 			return mutualFundsRepository.fetchHistory(symbol);
 		}
 		return null;
+	}
+	
+	public Optional<MutualFunds> findById(Long id) throws Exception {
+		if (id == null) {
+			throw new Exception("ID can Not be Null");
+		}
+		return mutualFundsRepository.findById(id);
 	}
 }

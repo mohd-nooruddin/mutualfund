@@ -1,6 +1,7 @@
 package com.mutualfunds.mf.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -52,4 +53,8 @@ public class MutualFundsController {
 		return ResponseEntity.ok(mutualFundsService.fetchHistoryBySymbol(symbol));
 	}
 	
+	@GetMapping("/find")
+	public ResponseEntity<Optional<MutualFunds>> findById(@RequestParam("id") Long id) throws Exception{
+			return ResponseEntity.ok(mutualFundsService.findById(id));
+	}
 }
