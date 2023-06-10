@@ -25,7 +25,17 @@ public class MutualFundTransactionService {
 	}
 
 	@Transactional
-	public String updateportfolio(Long userId, Long mutualFundsId, Double price, Double unit) {
+	public String updatePortfolioBuy(Long userId, Long mutualFundsId, Double price, Double unit) {
+		if (transactionRepository.findByMutualFundsId(mutualFundsId, userId) == 0) {
+			transactionRepository.addMutualFundTransaction(userId, mutualFundsId, price, unit);
+			return "Data inserted successfully";
+		}
+		transactionRepository.updateMutualFundTransaction(unit, userId, mutualFundsId);
+		return "Data inserted successfully";
+	}
+	
+	@Transactional
+	public String updatePortfolioSell(Long userId, Long mutualFundsId, Double price, Double unit) {
 
 		if (transactionRepository.findByMutualFundsId(mutualFundsId, userId) == 0) {
 			transactionRepository.addMutualFundTransaction(userId, mutualFundsId, price, unit);
