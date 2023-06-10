@@ -34,7 +34,7 @@ public class MutualFundTransactionHistoryController {
 			return "Insufficient balance";
 		} else {
 			if (type.equals("sell")) {
-				if (transactionService.updateportfolio(id, mutualFundsId, price, -(unit))
+				if (transactionService.updatePortfolioSell(id, mutualFundsId, price, -(unit))
 						.equals("Data inserted successfully")) {
 					transactionHistoryService.insertTransaction(id, mutualFundsId, type, price, unit);
 					transactionHistoryService.addMoneyToWallet(id, price);
@@ -49,7 +49,7 @@ public class MutualFundTransactionHistoryController {
 			transactionHistoryService.withdrawMoneyFromWallet(id, price);
 			String str = "Buy " + unit + " units of " + transactionHistoryService.getMfName(mutualFundsId);
 			transactionHistoryService.updateTransactionHistory(id, str, (price * unit));
-			return transactionService.updateportfolio(id, mutualFundsId, price, unit);
+			return transactionService.updatePortfolioBuy(id, mutualFundsId, price, unit);
 		}
 	}
 
