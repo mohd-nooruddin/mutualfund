@@ -24,12 +24,4 @@ public class MutualFundTransactionController {
 		return transactionService.getTransactionsByUserId(userId);
 	}
 
-	@PostMapping("/updateportfolio")
-	public String addMutualFundTransaction(@RequestParam("username") String username,
-			@RequestParam("mutualFundsId") Long mutualFundsId, @RequestParam("price") Double price,
-			@RequestParam("unit") Double unit) {
-		Long id = transactionService.getUserId(username);
-		transactionService.updateportfolio(id, mutualFundsId, price, unit);
-		return "Portfolio Updated Successfully";
-	}
 }
