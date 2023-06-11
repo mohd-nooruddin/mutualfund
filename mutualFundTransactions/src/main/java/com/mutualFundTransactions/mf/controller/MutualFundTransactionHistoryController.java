@@ -37,7 +37,7 @@ public class MutualFundTransactionHistoryController {
 				if (transactionService.updatePortfolioSell(id, mutualFundsId, price, -(unit))
 						.equals("Data inserted successfully")) {
 					transactionHistoryService.insertTransaction(id, mutualFundsId, type, price, unit);
-					transactionHistoryService.addMoneyToWallet(id, price);
+					transactionHistoryService.addMoneyToWallet(id, (price * unit));
 					String str = "Sold " + unit + " units of " + transactionHistoryService.getMfName(mutualFundsId);
 					transactionHistoryService.updateTransactionHistory(id, str, (price * unit));
 					return "Data inserted successfully";
@@ -46,7 +46,7 @@ public class MutualFundTransactionHistoryController {
 				}
 			}
 			transactionHistoryService.insertTransaction(id, mutualFundsId, type, price, unit);
-			transactionHistoryService.withdrawMoneyFromWallet(id, price);
+			transactionHistoryService.withdrawMoneyFromWallet(id, (price * unit));
 			String str = "Buy " + unit + " units of " + transactionHistoryService.getMfName(mutualFundsId);
 			transactionHistoryService.updateTransactionHistory(id, str, (price * unit));
 			return transactionService.updatePortfolioBuy(id, mutualFundsId, price, unit);
