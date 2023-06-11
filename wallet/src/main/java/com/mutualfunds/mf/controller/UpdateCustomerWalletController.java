@@ -19,6 +19,7 @@ import com.mutualfunds.mf.service.UpdateCustomerWalletService;
 public class UpdateCustomerWalletController {
 	@Autowired
 	UpdateCustomerWalletService updateCustomerWalletService;
+	@Autowired
 	CustomerWalletHistoryService customerWalletHistoryService;
 
 	@PatchMapping(value = "/addMoney")
