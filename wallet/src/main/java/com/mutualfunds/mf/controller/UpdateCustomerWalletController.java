@@ -51,4 +51,10 @@ public class UpdateCustomerWalletController {
 	public ResponseEntity<Double> getHistory(@RequestParam("customerId") Long customerId){
 		return ResponseEntity.ok(updateCustomerWalletService.getAccountBalance(customerId));
 	}
+	
+	@GetMapping(value = "/used")
+	@CrossOrigin
+	public ResponseEntity<Double> usedInMf(@RequestParam("customerId") Long customerId){
+		return ResponseEntity.ok(updateCustomerWalletService.usedInMf(customerId));
+	}
 }
