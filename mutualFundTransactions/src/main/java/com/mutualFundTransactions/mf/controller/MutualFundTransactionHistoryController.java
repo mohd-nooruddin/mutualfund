@@ -30,7 +30,7 @@ public class MutualFundTransactionHistoryController {
 			@RequestParam("price") Double price, @RequestParam("unit") Double unit) {
 		long id = transactionService.getUserId(username);
 		System.out.println(id);
-		if (transactionHistoryService.getAccountBalance(id) < price && type.equals("buy")) {
+		if (transactionHistoryService.getAccountBalance(id) < (price * unit) && type.equals("buy")) {
 			return "Insufficient balance";
 		} else {
 			if (type.equals("sell")) {
