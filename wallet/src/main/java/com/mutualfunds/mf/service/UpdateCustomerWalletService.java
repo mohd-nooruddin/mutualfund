@@ -27,4 +27,8 @@ public class UpdateCustomerWalletService {
 	public double getAccountBalance(Long customerId) {
 		return updateCustomerWalletRepository.getAccountBalance(customerId);
 	}
+	
+	public Double usedInMf(Long customerId) {
+		return updateCustomerWalletRepository.UsedInMf(customerId);		
+	}
 }
