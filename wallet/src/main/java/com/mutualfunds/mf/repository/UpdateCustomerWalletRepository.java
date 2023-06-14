@@ -19,4 +19,7 @@ public interface UpdateCustomerWalletRepository extends JpaRepository<CustomerWa
 
 	@Query(value = "SELECT WALLET_BALANCE FROM customer_wallet WHERE CUSTOMER_ID=?", nativeQuery = true)
 	public double getAccountBalance(Long customerId);
+	
+	@Query(value = "SELECT SUM(price*unit) FROM mutual_fund_transaction WHERE user_id = ?", nativeQuery = true)
+	public Double UsedInMf(Long customerId);
 }
